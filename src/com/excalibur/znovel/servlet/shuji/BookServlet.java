@@ -1,4 +1,4 @@
-package com.excalibur.znovel.servlet;
+package com.excalibur.znovel.servlet.shuji;
 
 import com.excalibur.znovel.bean.Book;
 import com.excalibur.znovel.dao.BookDao;

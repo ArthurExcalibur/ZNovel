@@ -5,7 +5,7 @@
          version="3.1">
     <filter>
         <filter-name>MyFilter</filter-name>
-        <filter-class>com.excalibur.znovel.servlet.MyFilter</filter-class>
+        <filter-class>com.excalibur.znovel.servlet.filter.MyFilter</filter-class>
         <init-param>
             <param-name>charset</param-name>
             <param-value>UTF-8</param-value>
@@ -22,7 +22,7 @@
 
     <servlet>
         <servlet-name>BookServlet</servlet-name>
-        <servlet-class>com.excalibur.znovel.servlet.BookServlet</servlet-class>
+        <servlet-class>com.excalibur.znovel.servlet.shuji.BookServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BookServlet</servlet-name>
@@ -31,7 +31,7 @@
 
     <servlet>
         <servlet-name>ShuChengServlet</servlet-name>
-        <servlet-class>com.excalibur.znovel.servlet.ShuChengServlet</servlet-class>
+        <servlet-class>com.excalibur.znovel.servlet.shuji.ShuChengServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShuChengServlet</servlet-name>
@@ -40,7 +40,7 @@
 
     <servlet>
         <servlet-name>ZhangJieServlet</servlet-name>
-        <servlet-class>com.excalibur.znovel.servlet.ZhangJieServlet</servlet-class>
+        <servlet-class>com.excalibur.znovel.servlet.yuedu.ZhangJieServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ZhangJieServlet</servlet-name>
@@ -49,7 +49,7 @@
 
     <servlet>
         <servlet-name>LiShiServlet</servlet-name>
-        <servlet-class>com.excalibur.znovel.servlet.LiShiServlet</servlet-class>
+        <servlet-class>com.excalibur.znovel.servlet.yonghu.LiShiServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LiShiServlet</servlet-name>
@@ -72,5 +72,22 @@
     <servlet-mapping>
         <servlet-name>FileServlet</servlet-name>
         <url-pattern>/file/upload</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.yonghu.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/yonghu/message</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StarServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.yonghu.StarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StarServlet</servlet-name>
+        <url-pattern>/yonghu/star</url-pattern>
     </servlet-mapping>
 </web-app>

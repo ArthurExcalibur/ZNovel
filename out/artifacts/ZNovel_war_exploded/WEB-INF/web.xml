@@ -73,4 +73,21 @@
         <servlet-name>FileServlet</servlet-name>
         <url-pattern>/file/upload</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.MessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/yonghu/message</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>StarServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.StarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StarServlet</servlet-name>
+        <url-pattern>/yonghu/star</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -1,7 +1,7 @@
 package com.excalibur.znovel.dao.impl;
 
 import com.excalibur.znovel.bean.Book;
-import com.excalibur.znovel.dao.BaseDao;
+import com.excalibur.znovel.dao.base.BaseDao;
 import com.excalibur.znovel.dao.BookDao;
 import com.excalibur.znovel.util.Constants;
 

@@ -1,4 +1,4 @@
-package com.excalibur.znovel.servlet;
+package com.excalibur.znovel.servlet.yuedu;
 
 import com.excalibur.znovel.bean.ZhangJie;
 import com.excalibur.znovel.data.BaseEntity;

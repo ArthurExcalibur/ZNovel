@@ -1,4 +1,4 @@
-package com.excalibur.znovel.servlet;
+package com.excalibur.znovel.servlet.yonghu;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

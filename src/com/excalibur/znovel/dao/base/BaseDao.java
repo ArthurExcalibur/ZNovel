@@ -1,4 +1,4 @@
-package com.excalibur.znovel.dao;
+package com.excalibur.znovel.dao.base;
 
 import java.sql.*;
 
@@ -53,6 +53,25 @@ public class BaseDao {
             closeAll(conn, state, null);
         }
         return rs;
+    }
+
+    public int executeCountSQL(String sql){
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet rs = null;
+        try {
+            conn = getConn();
+            state = conn.prepareStatement(sql);
+            rs = state.executeQuery();
+            if(null != rs && rs.next()){
+                return rs.getInt("count(*)");
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(conn,state,rs);
+        }
+        return 0;
     }
 
 }

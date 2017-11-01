@@ -1,4 +1,4 @@
-package com.excalibur.znovel.servlet;
+package com.excalibur.znovel.servlet.filter;
 
 import javax.servlet.FilterConfig;
 import javax.servlet.http.HttpServletRequest;
