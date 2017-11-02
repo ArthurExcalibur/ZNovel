@@ -156,6 +156,37 @@ public class BookDaoImpl extends BaseDao implements BookDao {
         return getBookBySQL(sql);
     }
 
+    @Override
+    public List<Boolean> isBookUpdated(List<Integer> idList) {
+        String str = "";
+        for (int i = 0; i < idList.size(); i++) {
+            str += idList.get(i);
+            if(i < idList.size() - 1)
+                str += ",";
+        }
+        String sql = "select todayUpdate from b_info where id in (" + str + ")";
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet rs = null;
+        try {
+            conn = getConn();
+            state = conn.prepareStatement(sql);
+            rs = state.executeQuery();
+            if(null != rs){
+                List<Boolean> list = new ArrayList<>();
+                while (rs.next()){
+                    list.add(rs.getInt("todayUpdate") > 0);
+                }
+                return list;
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(conn,state,rs);
+        }
+        return null;
+    }
+
     private int getMaxId(boolean max){
         String sql;
         if(max){

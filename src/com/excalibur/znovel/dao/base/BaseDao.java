@@ -4,10 +4,10 @@ import java.sql.*;
 
 public class BaseDao {
 
-    public static final String DRIVER = "";
-    public static final String URL = "";
-    public static final String USERNAME = "";
-    public static final String PWD = "";
+    public static final String DRIVER = "com.mysql.jdbc.Driver";
+    public static final String URL = "jdbc:mysql://116.196.91.63:3306/book?characterEncoding=utf8";
+    public static final String USERNAME = "root";
+    public static final String PWD = "199611";
 
     //  获得连接
     public Connection getConn() throws ClassNotFoundException,SQLException {

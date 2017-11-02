@@ -90,4 +90,12 @@
         <servlet-name>StarServlet</servlet-name>
         <url-pattern>/yonghu/star</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ZhuishuServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.yonghu.ZhuishuServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ZhuishuServlet</servlet-name>
+        <url-pattern>/yonghu/zhuishu</url-pattern>
+    </servlet-mapping>
 </web-app>

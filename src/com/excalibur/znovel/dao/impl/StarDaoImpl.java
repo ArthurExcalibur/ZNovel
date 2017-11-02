@@ -40,8 +40,8 @@ public class StarDaoImpl extends BaseDao implements StarDao {
     }
 
     @Override
-    public int getStarNumber(int id) {
-        String sql = "select count(*) from dianzan where beizanId = " + id;
+    public int getStarNumber(int id,int type) {
+        String sql = "select count(*) from dianzan where beizanId = " + id + " and type = " + type;
         return executeCountSQL(sql);
     }
 }

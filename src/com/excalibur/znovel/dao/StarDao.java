@@ -4,5 +4,5 @@ public interface StarDao {
 
     boolean star(int zanId,int beizanId,int type);
 
-    int getStarNumber(int id);
+    int getStarNumber(int id,int type);
 }

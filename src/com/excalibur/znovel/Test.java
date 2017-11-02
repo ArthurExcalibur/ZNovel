@@ -2,16 +2,12 @@ package com.excalibur.znovel;
 
 
 import com.excalibur.znovel.bean.Book;
+import com.excalibur.znovel.bean.Comment;
 import com.excalibur.znovel.bean.Message;
-import com.excalibur.znovel.dao.AdviceDao;
-import com.excalibur.znovel.dao.BookDao;
-import com.excalibur.znovel.dao.MessageDao;
-import com.excalibur.znovel.dao.StarDao;
-import com.excalibur.znovel.dao.impl.AdviceDaoImpl;
-import com.excalibur.znovel.dao.impl.BookDaoImpl;
-import com.excalibur.znovel.dao.impl.MessageDaoImpl;
-import com.excalibur.znovel.dao.impl.StarDaoImpl;
+import com.excalibur.znovel.dao.*;
+import com.excalibur.znovel.dao.impl.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -19,9 +15,13 @@ public class Test {
 
     public static void main(String[] args){
 //        BookDaoImpl dao = new BookDaoImpl();
-//        List<Book> list = dao.getBookByAuthor("跳舞",0);
-//        for (Book b : list) {
-//            System.out.println(b.toString());
+//        List<Integer> l = new ArrayList<>();
+//        for (int i = 0; i < 10000; i++) {
+//            l.add(i);
+//        }
+//        List<Boolean> list = dao.isBookUpdated(l);
+//        for (Boolean b : list) {
+//            System.out.println(dao.getBookInfo(9968).toString());
 //        }
 //        System.out.println(System.currentTimeMillis());
 //        Random random = new Random();
@@ -36,8 +36,14 @@ public class Test {
 //        for (Message m : list) {
 //            System.out.println(dao.getUnReadMessageNumber(2));
 //        }
-        StarDao dao = new StarDaoImpl();
-        System.out.println(dao.star(1,1,0));
+//        StarDao dao = new StarDaoImpl();
+//        System.out.println(dao.star(1,1,0));
+        CommentDao dao = new CommentDaoImpl();
+        List<Comment> c = dao.getCommentList(-1,100,0,1);//获取id为100的书籍的评论列表
+        List<Comment> c1 = dao.getCommentList(1,100,0,2);//获取评论id为1，书本id为100的评论列表
+        for (int i = 0; i < c1.size(); i++) {
+            System.out.println(c1.get(i).toString());
+        }
     }
 
 }

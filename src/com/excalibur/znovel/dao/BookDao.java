@@ -24,4 +24,6 @@ public interface BookDao {
 
     List<Book> getBooksByGuess();
     List<Book> getBooksByGeLei();
+
+    List<Boolean> isBookUpdated(List<Integer> idList);
 }

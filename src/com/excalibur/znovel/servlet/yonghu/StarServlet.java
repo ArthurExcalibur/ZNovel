@@ -33,11 +33,12 @@ public class StarServlet extends HttpServlet {
             switch (action){
                 case "number" :{
                     String i = request.getParameter("id");
-                    if(TextUtil.isEmpty(i)){
+                    String type = request.getParameter("type");
+                    if(TextUtil.isEmpty(i) || TextUtil.isEmpty(type)){
                         entity.setStatus(false);
                         entity.setError_info("参数错误");
                     }else{
-                        entity.setData("" + dao.getStarNumber(Integer.parseInt(i)));
+                        entity.setData("" + dao.getStarNumber(Integer.parseInt(i),Integer.parseInt(type)));
                     }
                     break;
                 }
