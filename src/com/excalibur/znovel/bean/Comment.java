@@ -14,6 +14,7 @@ public class Comment implements Serializable {
     private int star;
     private String name;
     private String img;
+    private String beipingName;
     private String status;
 
     private int dianzanshu;
@@ -59,20 +60,20 @@ public class Comment implements Serializable {
         this.beipingId = beipingId;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
     public int getHuifuId() {
         return huifuId;
     }
 
     public void setHuifuId(int huifuId) {
         this.huifuId = huifuId;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public int getStar() {
@@ -97,6 +98,14 @@ public class Comment implements Serializable {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    public String getBeipingName() {
+        return beipingName;
+    }
+
+    public void setBeipingName(String beipingName) {
+        this.beipingName = beipingName;
     }
 
     public String getStatus() {
@@ -136,6 +145,7 @@ public class Comment implements Serializable {
                 ", star=" + star +
                 ", name='" + name + '\'' +
                 ", img='" + img + '\'' +
+                ", beipingName='" + beipingName + '\'' +
                 ", status='" + status + '\'' +
                 ", dianzanshu=" + dianzanshu +
                 ", pinglunshu=" + pinglunshu +

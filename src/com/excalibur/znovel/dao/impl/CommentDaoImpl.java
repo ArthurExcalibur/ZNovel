@@ -71,6 +71,7 @@ public class CommentDaoImpl extends BaseDao implements CommentDao {
                     c.setName(rs.getString("name"));
                     c.setImg(rs.getString("img"));
                     c.setStatus(rs.getString("status"));
+                    c.setBeipingName(rs.getString("beipingName"));
                     int number = getCommentNumber(c.getPinglunId(),beipingId,type + 1);
                     int number1 = starDao.getStarNumber(c.getPinglunId(),type);
                     c.setDianzanshu(number1);
