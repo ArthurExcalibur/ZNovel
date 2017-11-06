@@ -19,8 +19,8 @@ public class CommentDaoImpl extends BaseDao implements CommentDao {
     private StarDao starDao = new StarDaoImpl();
 
     @Override
-    public boolean addComment(int type, String comment, int pinglunId, int beipingId, int huifuId, int star, String name, String img) {
-        String sql = "insert into pinglun(type,comment,pinglunId,beipingId,huifuId,time,star,name,img,status) values(" +
+    public boolean addComment(int type, String comment, int pinglunId, int beipingId, int huifuId, int star, String name, String img,String beipingName) {
+        String sql = "insert into pinglun(type,comment,pinglunId,beipingId,huifuId,time,star,name,img,status,beipingName) values(" +
                 type + "," +
                 TextUtil.fillValue(comment) + "," +
                 pinglunId + "," +
@@ -30,7 +30,8 @@ public class CommentDaoImpl extends BaseDao implements CommentDao {
                 star + "," +
                 TextUtil.fillValue(name) + "," +
                 TextUtil.fillValue(img) + "," +
-                "'启用')";
+                "'启用'," +
+                TextUtil.fillValue(beipingName) + ")";
         return executeSQL(sql,null) > 0;
     }
 
