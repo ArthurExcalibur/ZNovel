@@ -46,9 +46,9 @@ public class CommentDaoImpl extends BaseDao implements CommentDao {
         page *= Constants.Book.PAGE_NUMBER;
         String sql;
         if(pinglunId >= 0){
-            sql = "select * from pinglun where status = '启用' and huifuId = " + pinglunId + " and beipingId = " + beipingId + " and type = " + type + " limit " + page + "," + Constants.Book.PAGE_NUMBER;
+            sql = "select * from pinglun where status = '启用' and huifuId = " + pinglunId + " and beipingId = " + beipingId + " and type = " + type + " order by time asc limit " + page + "," + Constants.Book.PAGE_NUMBER;
         }else{
-            sql = "select * from pinglun where status = '启用' and beipingId = " + beipingId + " and type = " + type + " limit " + page + "," + Constants.Book.PAGE_NUMBER;
+            sql = "select * from pinglun where status = '启用' and beipingId = " + beipingId + " and type = " + type + " order by time asc limit " + page + "," + Constants.Book.PAGE_NUMBER;
         }
         Connection conn = null;
         PreparedStatement state = null;

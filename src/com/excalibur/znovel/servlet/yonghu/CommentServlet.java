@@ -44,6 +44,7 @@ public class CommentServlet extends HttpServlet {
                     String star = request.getParameter("star");//可选
                     String name = request.getParameter("name");//必须
                     String img = request.getParameter("img");//必须
+                    String pingName = request.getParameter("pingName");//可选
                     if(TextUtil.isEmpty(type) || TextUtil.isEmpty(comment) || TextUtil.isEmpty(pinglunId) || TextUtil.isEmpty(beipingId)
                             || TextUtil.isEmpty(name) || TextUtil.isEmpty(img)){
                         entity.setStatus(false);
@@ -51,7 +52,7 @@ public class CommentServlet extends HttpServlet {
                     }else{
                         int h = TextUtil.isEmpty(huifuId) ? -1 : Integer.parseInt(huifuId);
                         if(! dao.addComment(Integer.parseInt(type),comment,Integer.parseInt(pinglunId),Integer.parseInt(beipingId)
-                                ,h,Integer.parseInt(star),name,img)){
+                                ,h,Integer.parseInt(star),name,img,pingName)){
                             entity.setStatus(false);
                             entity.setError_info("内部错误");
                         }

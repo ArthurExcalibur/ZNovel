@@ -98,4 +98,12 @@
         <servlet-name>ZhuishuServlet</servlet-name>
         <url-pattern>/yonghu/zhuishu</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.excalibur.znovel.servlet.yonghu.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/yonghu/login</url-pattern>
+    </servlet-mapping>
 </web-app>

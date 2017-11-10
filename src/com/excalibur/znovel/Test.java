@@ -3,6 +3,7 @@ package com.excalibur.znovel;
 
 import com.excalibur.znovel.bean.Book;
 import com.excalibur.znovel.bean.Comment;
+import com.excalibur.znovel.bean.History;
 import com.excalibur.znovel.bean.Message;
 import com.excalibur.znovel.dao.*;
 import com.excalibur.znovel.dao.impl.*;
@@ -38,12 +39,18 @@ public class Test {
 //        }
 //        StarDao dao = new StarDaoImpl();
 //        System.out.println(dao.star(1,1,0));
-        CommentDao dao = new CommentDaoImpl();
-        List<Comment> c = dao.getCommentList(-1,100,0,1);//获取id为100的书籍的评论列表
-        List<Comment> c1 = dao.getCommentList(1,100,0,2);//获取评论id为1，书本id为100的评论列表
-        for (int i = 0; i < c1.size(); i++) {
-            System.out.println(c1.get(i).toString());
-        }
+//        CommentDao dao = new CommentDaoImpl();
+//        List<Comment> c = dao.getCommentList(-1,100,0,1);//获取id为100的书籍的评论列表
+//        List<Comment> c1 = dao.getCommentList(1,100,0,2);//获取评论id为1，书本id为100的评论列表
+//        for (int i = 0; i < c1.size(); i++) {
+//            System.out.println(c1.get(i).toString());
+//        }
+//        HistoryDao dao = new HistoryDaoImpl();
+//        List<History> list = dao.getHistoryList(1,0);
+//        for (History h:list) {
+//            System.out.println(h.toString());
+//        }
+
     }
 
 }

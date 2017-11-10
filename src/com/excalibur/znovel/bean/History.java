@@ -12,6 +12,10 @@ public class History implements Serializable{
     private String lastReadTime;
     private String totalReadTime;
     private String comment;
+    private String status;
+    private int zhangjie;
+    private int zhangjieIndex;
+    private String percent;
 
     private String name;
     private String author;
@@ -74,6 +78,38 @@ public class History implements Serializable{
         this.comment = comment;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getZhangjie() {
+        return zhangjie;
+    }
+
+    public void setZhangjie(int zhangjie) {
+        this.zhangjie = zhangjie;
+    }
+
+    public int getZhangjieIndex() {
+        return zhangjieIndex;
+    }
+
+    public void setZhangjieIndex(int zhangjieIndex) {
+        this.zhangjieIndex = zhangjieIndex;
+    }
+
+    public String getPercent() {
+        return percent;
+    }
+
+    public void setPercent(String percent) {
+        this.percent = percent;
+    }
+
     public String getName() {
         return name;
     }
@@ -116,6 +152,10 @@ public class History implements Serializable{
                 ", lastReadTime='" + lastReadTime + '\'' +
                 ", totalReadTime='" + totalReadTime + '\'' +
                 ", comment='" + comment + '\'' +
+                ", status='" + status + '\'' +
+                ", zhangjie=" + zhangjie +
+                ", zhangjieIndex=" + zhangjieIndex +
+                ", percent='" + percent + '\'' +
                 ", name='" + name + '\'' +
                 ", author='" + author + '\'' +
                 ", desc='" + desc + '\'' +
