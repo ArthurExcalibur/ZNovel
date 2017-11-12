@@ -1,7 +1,13 @@
 package com.excalibur.znovel.dao;
 
-/**
- * Created by Excalibur on 2017/11/11.
- */
 public interface UserDao {
+
+    boolean register(String name,String pass,String img,String desc,String sex,String resID);
+    boolean updatePass(int id,String newPass);
+
+    boolean checkForUser(String name);
+    boolean checkForPass(int id,String pass);
+    boolean checkForResID(int id,String resID);
+
+    boolean updateResID(int id,String resID);
 }

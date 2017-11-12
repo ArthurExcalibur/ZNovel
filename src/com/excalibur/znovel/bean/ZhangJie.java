@@ -6,6 +6,7 @@ public class ZhangJie implements Serializable {
 
     private String name;
     private int index;
+    private String url;
 
     public String getName() {
         return name;
@@ -23,11 +24,20 @@ public class ZhangJie implements Serializable {
         this.index = index;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
         return "ZhangJie{" +
                 "name='" + name + '\'' +
                 ", index=" + index +
+                ", url='" + url + '\'' +
                 '}';
     }
 }
