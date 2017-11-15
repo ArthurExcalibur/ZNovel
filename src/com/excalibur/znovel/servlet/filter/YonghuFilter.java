@@ -34,14 +34,24 @@ public class YonghuFilter implements Filter {
             entity.setStatus(false);
             entity.setError_info("该用户不存在");
             response.getWriter().print(gson.toJson(entity));
+        }else if(TextUtil.isEmpty(resID)){
+            entity.setStatus(false);
+            entity.setError_info("手机序列号为空");
+            response.getWriter().print(gson.toJson(entity));
         }else{
-            if(dao.checkForResID(Integer.parseInt(id),resID)){
-                entity.setStatus(false);
-                entity.setError_info("手机序列号不对");
-                response.getWriter().print(gson.toJson(entity));
-            }else{
+            String action = request.getParameter("action");
+            if("login".equals(action)){
                 //将请求转发到目的地
                 chain.doFilter(request, response);
+            }else{
+                if(!dao.checkForResID(Integer.parseInt(id),resID)){
+                    entity.setStatus(false);
+                    entity.setError_info("手机序列号不对");
+                    response.getWriter().print(gson.toJson(entity));
+                }else{
+                    //将请求转发到目的地
+                    chain.doFilter(request, response);
+                }
             }
         }
     }

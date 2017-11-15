@@ -18,7 +18,7 @@ public class ZhangJieUtil {
     public static String getContentByUrl(String url){
         String content = null;
         try {
-            Document document = Jsoup.parse(new URL(url).openStream(), "GBK", url);
+            Document document = Jsoup.parse(new URL(url).openStream(), "UTF-8", url);
 //            Document doc = Jsoup.connect(url).get();
             if(null == document)return null;
             Element div = document.getElementById("content");

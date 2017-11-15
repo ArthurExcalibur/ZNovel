@@ -4,3 +4,4 @@ out/
 ZNovel.iml
 BaseDao.java
 Constants.java
+src/com/excalibur/znovel/dao/base/

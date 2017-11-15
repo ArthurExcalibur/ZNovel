@@ -9,5 +9,5 @@ public interface UserDao {
     boolean checkForPass(int id,String pass);
     boolean checkForResID(int id,String resID);
 
-    boolean updateResID(int id,String resID);
+    String updateResID(int id,String resID);
 }

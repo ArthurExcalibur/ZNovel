@@ -7,6 +7,7 @@ import com.excalibur.znovel.bean.History;
 import com.excalibur.znovel.bean.Message;
 import com.excalibur.znovel.dao.*;
 import com.excalibur.znovel.dao.impl.*;
+import com.excalibur.znovel.util.ZhangJieUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +49,8 @@ public class Test {
 //        HistoryDao dao = new HistoryDaoImpl();
 //        List<History> list = dao.getHistoryList(1,0);
 //        for (History h:list) {
-//            System.out.println(h.toString());
+        UserDao dao = new UserDaoImpl();
+            System.out.println(dao.updateResID(1,"5"));
 //        }
 
     }

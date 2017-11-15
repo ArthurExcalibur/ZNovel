@@ -3,6 +3,7 @@ package com.excalibur.znovel.servlet.yonghu;
 import com.excalibur.znovel.dao.UserDao;
 import com.excalibur.znovel.dao.impl.UserDaoImpl;
 import com.excalibur.znovel.data.BaseEntity;
+import com.excalibur.znovel.util.JPushUtil;
 import com.excalibur.znovel.util.TextUtil;
 import com.google.gson.Gson;
 
@@ -64,7 +65,10 @@ public class LoginServlet extends HttpServlet {
                     }else{
                         if(dao.checkForPass(Integer.parseInt(id),pass)){
                             String resID = request.getHeader("resID");
-                            dao.updateResID(Integer.parseInt(id),resID);
+                            String formerId = dao.updateResID(Integer.parseInt(id),resID);
+                            if(!formerId.equals(resID)){
+                                JPushUtil.sendOfflineMessage(formerId);
+                            }
                         }else{
                             entity.setStatus(false);
                             entity.setError_info("用户名或密码错误");

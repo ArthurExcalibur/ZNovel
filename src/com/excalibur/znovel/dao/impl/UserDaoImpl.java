@@ -4,6 +4,11 @@ import com.excalibur.znovel.dao.UserDao;
 import com.excalibur.znovel.dao.base.BaseDao;
 import com.excalibur.znovel.util.TextUtil;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class UserDaoImpl extends BaseDao implements UserDao{
 
     @Override
@@ -44,9 +49,28 @@ public class UserDaoImpl extends BaseDao implements UserDao{
     }
 
     @Override
-    public boolean updateResID(int id, String resID) {
-        String sql = "update user set resId = " + TextUtil.fillValue(resID) + " where id = " + id;
-        return executeSQL(sql,null) > 0;
+    public String updateResID(int id, String resID) {
+        String s = "select resId from user where id = " + id;
+        Connection conn = null;
+        PreparedStatement state = null;
+        ResultSet rs = null;
+        try {
+            conn = getConn();
+            state = conn.prepareStatement(s);
+            rs = state.executeQuery();
+            if(null != rs && rs.next()){
+                String resId = rs.getString("resId");
+                String sql = "update user set resId = " + TextUtil.fillValue(resID) + " where id = " + id;
+                if(executeSQL(sql,null)> 0){
+                    return resId;
+                }
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(conn,state,rs);
+        }
+        return null;
     }
 
 

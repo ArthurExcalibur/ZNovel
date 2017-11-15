@@ -9,7 +9,7 @@ public class JPushUtil {
     public static void sendOfflineMessage(String resID){
         JPushClient jpushClient = new JPushClient("","");
         try {
-            jpushClient.sendAndroidMessageWithRegistrationID("","offline",resID);
+            jpushClient.sendAndroidMessageWithRegistrationID("offline","offline",resID);
         } catch (APIConnectionException | APIRequestException e) {
             e.printStackTrace();
         }
